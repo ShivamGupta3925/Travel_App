@@ -1,6 +1,8 @@
 require('dotenv').config(); // Load environment variables from .env file
 const express = require('express');
 const mongoose = require('mongoose');
+const cors=require('cors');
+
 
     
 
@@ -16,6 +18,9 @@ const wishlistRouter=require("./routes/wishlist.router");
 const connectDB = require('./config/dbconfig');
 
 const app = express();
+
+app.use(cors());
+
 
 app.use(express.json()); // Parse JSON payloads
 
